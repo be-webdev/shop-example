@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700&subset=cyrillic');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+  box-sizing:border-box;
+  border-radius:0!important;
+}
+body{
+	overflow-x: hidden;
+}
+
+body.active{
+	overflow:hidden;
+}
+/* ===== PRELOADER ===== */
+.preloader{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:#f7f7f7;
+	z-index:99998;
+}
+.preloader img{
+	width:5rem;
+	margin:auto;
+	display:block;
+}
+.preloader .loading{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	width:10rem;
+}
+.loader {
+  height: .125rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+  margin-top:1rem;
+}
+.loader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -10rem;
+  width: 10rem;
+  height: .125rem;
+  background-color: #ef1404;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    from {left: -12.5rem; width: 30%;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% {left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}
+
+/* ===== END PRELOADER ===== */
+
+img{
+	width:100%;
+}
+header{
+	overflow:hidden;
+}
+.logo img{
+	width:auto;
+	height:2.5rem;
+	margin:.625rem 0 .625rem .3125rem;
+}
+.item-name-container{
+	position:absolute;
+	width:100%;
+	height:100%;
+	bottom:0;
+	padding-top:1rem;
+	background:rgba(255,255,255,.9);
+	visibility: hidden;
+	opacity:0;
+	transition: visibility 0s, opacity .5s linear;
+}
+.filter:hover .item-name-container{
+	visibility: visible;
+	opacity: 1;
+}
+.item-name-content{
+	position:absolute;
+	top:50%;
+	transform: translateY(-50%);
+	width:100%;
+	padding:1rem;
+}
+.cart .container img,
+.items img{
+	display:block;
+	margin: auto;
+	object-fit: cover;
+	width:100%;
+	height:12.5rem;
+
+}
+ .cart .row:nth-child(even){
+ 	background:#f7f7f7;
+ }
+ #total-prices{
+ 	border-top:.0625rem solid #000;
+ }
+
+ /*Bootstrap opened Modal background */
+ .modal-open .modal{
+ 	background:rgba(255,255,255,.5);
+ }
+
+ /* ========== Single Item Modal ========== */
+.modal img{
+	width:100%;
+	height:100%;
+}
+ #quantity{
+	width:3.125rem;
+	text-align:center;
+ }
+ .quantity-box{
+ 	display:inline-block;
+ 	padding-left:.75rem;
+ 	border:.0625rem solid #ccc;
+ }
+ #bag{
+ 	position:absolute;
+ 	top:1.5rem;
+ 	left:0.9375rem;
+ 	font-size:.55rem;
+ 	width:.9375rem;
+ 	text-align:center;
+ 	color:#fff;
+ }
+
+ /*=======MINICART=========*/
+ #minicart{
+ 	visibility: hidden;
+ 	position:relative;
+  top:-50px;
+ 	width:0;
+  height:0;
+ }
+ #minicart.active:before{
+ 	content:'';
+ 	background:rgba(255,255,255,.5);
+ 	position:fixed;
+ 	top:0;
+ 	left:0;
+ 	width:100%;
+ 	height:100%;
+ 	z-index:0;
+ }
+
+ #minicart.active{
+ 	visibility: visible;
+ 	position:fixed;
+ 	background: #fff;
+ 	top:0;
+ 	right:0;
+ 	max-width:30rem;
+ 	width:100%;
+ 	height:100%;
+ 	transition: width 1s;
+ 	-webkit-box-shadow: -.3125rem 0 .625rem 0 rgba(0,0,0,.75);
+	-moz-box-shadow: -.3125rem 0 .625rem 0 rgba(0,0,0,.75);
+	box-shadow: -.3125rem 0 .625rem 0 rgba(0,0,0,.75);
+ 	z-index:9998;
+ }
+ .minicart-content{
+ 	position:absolute;
+ 	top:3.75rem;
+ 	bottom:3.3125rem;
+ 	width:100%;
+ 	overflow-y:auto;
+ }
+#close-cart{
+	position:absolute;
+	top:0;
+}
+.delete-cart-item{
+	position:absolute;
+	background:rgba(255,255,255,.7);
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	visibility:hidden;
+}
+#minicart .row:hover .delete-cart-item{
+	visibility: visible;
+}
+.delete-cart-item button{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+/* EMPTY BAG */
+.empty-bag{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff0000;
+}
+/* Basket TOTAL*/
+.bag-footer{
+	position:absolute;
+	bottom:0;
+	right:0;
+	text-align:center;
+	height:3.3125rem;
+	width:100%;
+	background:#fff;
+	border-top:.0625rem solid #ddd;
+}
+#btnCheckout span{
+	font-family: 'Comfortaa', cursive;
+}
+ /*Header buttons in mobile block*/
+ @media screen and (max-width:1200px){
+ 	header .btn{
+ 		display:block;
+ 	}
+ }

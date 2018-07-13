@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Shop</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="preloader" class="preloader"> <!-- PRELOADER -->
+		<div class="loading">
+			<img src="images/logo.png" alt="Preloader Logo">
+			<div class="loader"></div>
+		</div>
+	</div> <!-- ./PRELOADER -->
+	<header class="fixed-top shadow bg-white"> <!-- header -->
+		<div class="container">
+			<a class="logo" href="#"><img class="float-left" src="images/logo.png" alt="Shop Logo"></a> <!-- logo -->
+			<nav class="navbar-expand-lg navbar-light float-left pt-3 ml-5">
+  				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCategory" aria-controls="navbarCategory" aria-expanded="false" aria-label="Toggle navigation">
+    				<span><i class="fa fa-bars" aria-hidden="true"></i></i></span>
+  				</button>
+  				<div class="collapse navbar-collapse" id="navbarCategory"> <!-- Menu buttons -->
+
+  				</div>
+			</nav>
+			<button type="button" id="btn-cart" class="btn btn-link float-right py-3 pr-1 position-relative" title="Shopping Cart"><i class="fa fa-suitcase fa-lg" aria-hidden="true"></i><span id="bag">-</span></button>
+		</div>
+	</header> <!-- ./header -->
+	<div class="container mt-5"> <!-- container -->
+		<div id="items-list" class="row items">
+		</div>
+	</div> <!-- ./container -->
+	<div id="minicart"> <!-- MINICART -->
+		<div class="position-relative py-2 border-bottom"> <!-- MINICART HEADER -->
+			<h5 class="text-uppercase text-center pt-2 pb-1">Shopping Bag</h5>
+			<button type="button" id="close-cart" class="btn btn-link p-3"><i class="fa fa-times" aria-hidden="true"></i></button>
+		</div>
+		<div id="minicart-content" class="minicart-content"> <!-- MINICART CONTENT -->
+
+		</div>	<!-- ./MINICART CONTENT -->
+		<div id="bag-total" class="bag-footer">
+			<div class="row">
+				<div class="col-6 py-3">
+					<strong>Total:</strong> <span id="bascketTotal" class="text-danger font-weight-bold">0</span><sup><small class="text-danger">€</small></sup>
+				</div>
+				<div class="col-6 py-2">
+					<button type="button" id="btnCheckout" class="btn btn-primary fa fa-credit-card"> <span>Checkout</span></button>
+				</div>
+			</div>
+		</div>
+	</div> <!-- MINICART -->
+
+	<!-- <footer class="p-3 border-top">
+		<a href="admin" title="Admin Front-end" target="_blank">Admin</a>
+	</footer> -->
+
+
+	<script src="js/jQuery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/constructor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
