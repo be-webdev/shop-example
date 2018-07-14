@@ -212,7 +212,5 @@ app.get('/order', function(req, res) {
   });
 });
 
-
-
 console.log('started shop server.');
 app.listen( 3000 );
