@@ -32,22 +32,22 @@ function items() {
 
         	//Create Items
             let itemsTemplate = `<div class="col-lg-3 col-md-6 col-sm-12 my-3 filter all ${dataAnswer.products[i].category}">
-														<div class="item mx-1 pb-3 shadow position-relative">
-															<div>
-																<img src="${dataAnswer.products[i].imgurl}" alt="${dataAnswer.products[i].name} Image">
-															</div>
-															<div class="text-center pt-3">
-																<small>PRICE:</small> <span class="text-danger font-weight-bold align-middle">${dataAnswer.products[i].price}<sup><small>€</small></sup></span>
-															</div>
-															<div class="item-name-container text-center">
-																<div class="item-name-content">
-																	<h4>${dataAnswer.products[i].name}</h4>
-																	<button type="button" data-id="${dataAnswer.products[i].id}" data-name="${dataAnswer.products[i].name}" data-img-url="${dataAnswer.products[i].imgurl}" data-price="${dataAnswer.products[i].price}" data-quantity="1" class="buy btn btn-primary m-1 fa fa-suitcase"  title="Add to the Bag"></button>
-																	<button type="button" data-toggle="modal" data-target="#view-${dataAnswer.products[i].id}" class="btn btn-primary m-1 fa fa-eye"  title="Quick View"></button>
-																</div>
-															</div>
-														</div>
-													  </div>`;
+        														<div class="item mx-1 pb-3 shadow position-relative">
+        															<div>
+        																<img src="${dataAnswer.products[i].imgurl}" alt="${dataAnswer.products[i].name} Image">
+        															</div>
+        															<div class="text-center pt-3">
+        																<small>PRICE:</small> <span class="text-danger font-weight-bold align-middle">${dataAnswer.products[i].price}<sup><small>€</small></sup></span>
+        															</div>
+        															<div class="item-name-container text-center">
+        																<div class="item-name-content">
+        																	<h4>${dataAnswer.products[i].name}</h4>
+        																	<button type="button" data-id="${dataAnswer.products[i].id}" data-name="${dataAnswer.products[i].name}" data-img-url="${dataAnswer.products[i].imgurl}" data-price="${dataAnswer.products[i].price}" data-quantity="1" class="buy btn btn-primary m-1 fa fa-suitcase"  title="Add to the Bag"></button>
+        																	<button type="button" data-toggle="modal" data-target="#view-${dataAnswer.products[i].id}" class="btn btn-primary m-1 fa fa-eye"  title="Quick View"></button>
+        																</div>
+        															</div>
+        														</div>
+													        </div>`;
 
             //Create modals
 			let modalTemplate = `<div class="modal fade" id="view-${dataAnswer.products[i].id}" tabindex="-1" role="dialog" aria-labelledby="modal-${dataAnswer.products[i].id}-Title" aria-hidden="true">
@@ -136,7 +136,7 @@ function items() {
             let dataName = event.target.dataset.name;
             let dataPrice = event.target.dataset.price;
             let dataImgUrl = event.target.dataset.imgUrl;
-            let dataQuantity = document.getElementById(dataId).value;
+            let dataQuantity = document.querySelector('#'+dataId).value;
             let key = true;
 
             for (let index = 0; index < bascket.length; index++) {
@@ -234,18 +234,18 @@ function getBack() {
     	let newCart = '';
         for(let i=0; i<bascket.length; i++){
         	newCart += `<div class="row m-2 position-relative py-2 border">
-							<div class="col-4 m-auto">
-								<img src="${bascket[i].imgurl}" alt="${bascket[i].name} Image">
-							</div>
-							<div class="col-8 text-center m-auto">
-								<p>${bascket[i].name}</p>
-								<p><small>Quantity:</small> ${bascket[i].quantity}</p>
-								<p><small>Price:</small>  <span class="text-danger">${bascket[i].price}<sup><small>€</small></sup></span></p>
-							</div>
-							<div class="delete-cart-item">
-								<button type="button" data-id="${bascket[i].productids}" class="delete btn btn-danger fa fa-trash"></button>
-							</div>
-					   </div>`;
+          							<div class="col-4 m-auto">
+          								<img src="${bascket[i].imgurl}" alt="${bascket[i].name} Image">
+          							</div>
+          							<div class="col-8 text-center m-auto">
+          								<p>${bascket[i].name}</p>
+          								<p><small>Quantity:</small> ${bascket[i].quantity}</p>
+          								<p><small>Price:</small>  <span class="text-danger">${bascket[i].price}<sup><small>€</small></sup></span></p>
+          							</div>
+          							<div class="delete-cart-item">
+          								<button type="button" data-id="${bascket[i].productids}" class="delete btn btn-danger fa fa-trash"></button>
+          							</div>
+					            </div>`;
 
             bascketQuantity += parseFloat(bascket[i].quantity);
             bascketTotal += parseFloat(bascket[i].price);
