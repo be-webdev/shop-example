@@ -1,5 +1,3 @@
-let dataAnswer = {};
-
 let bascket = [];
 
 function items() {
@@ -30,7 +28,7 @@ function items() {
 
         for (let i = 0; i < dataAnswer.products.length; i++) {
 
-        	//Create Items
+        	  //Create Items
             let itemsTemplate = `<div class="col-lg-3 col-md-6 col-sm-12 my-3 filter all ${dataAnswer.products[i].category}">
         														<div class="item mx-1 pb-3 shadow position-relative">
         															<div>
@@ -50,36 +48,36 @@ function items() {
 													        </div>`;
 
             //Create modals
-			let modalTemplate = `<div class="modal fade" id="view-${dataAnswer.products[i].id}" tabindex="-1" role="dialog" aria-labelledby="modal-${dataAnswer.products[i].id}-Title" aria-hidden="true">
-  															<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    															<div class="modal-content">
-      																<div class="modal-header">
-        																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          																	<span aria-hidden="true">&times;</span>
-        																</button>
-      																</div>
-      																<div class="modal-body">
-      																	<div class="row">
-																			<div class="col-lg-4">
-																				<img src="${dataAnswer.products[i].imgurl}" alt="${dataAnswer.products[i].name} Image">
-																			</div>
-																			<div class="col-lg-8 m-auto">
-																				<h1>${dataAnswer.products[i].name}</h1>
-																				<p>${dataAnswer.products[i].description}</p>
-																				<p>Price: <span class="text-danger h5 align-middle font-weight-bold">${dataAnswer.products[i].price}<sup><small>€</small></sup></span></p>
-																				<p class="quantity-box">Quantity: <input type="number"  id="${dataAnswer.products[i].id}" min="1" max="10" value="1"> <button type="button" data-id="${dataAnswer.products[i].id}" data-name="${dataAnswer.products[i].name}" data-img-url="${dataAnswer.products[i].imgurl}" data-price="${dataAnswer.products[i].price}" class="buyfew btn btn-primary py-2"><i class="fa fa-suitcase" aria-hidden="true"></i> Buy</button></p>
-																			</div>
-																		</div>
-      																</div>
-    															</div>
-  															</div>
-													   </div>`;
+      			let modalTemplate = `<div class="modal fade" id="view-${dataAnswer.products[i].id}" tabindex="-1" role="dialog" aria-labelledby="modal-${dataAnswer.products[i].id}-Title" aria-hidden="true">
+        															<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          															<div class="modal-content">
+            																<div class="modal-header">
+              																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                																	<span aria-hidden="true">&times;</span>
+              																</button>
+            																</div>
+            																<div class="modal-body">
+            																	<div class="row">
+      																			<div class="col-lg-4">
+      																				<img src="${dataAnswer.products[i].imgurl}" alt="${dataAnswer.products[i].name} Image">
+      																			</div>
+      																			<div class="col-lg-8 m-auto">
+      																				<h1>${dataAnswer.products[i].name}</h1>
+      																				<p>${dataAnswer.products[i].description}</p>
+      																				<p>Price: <span class="text-danger h5 align-middle font-weight-bold">${dataAnswer.products[i].price}<sup><small>€</small></sup></span></p>
+      																				<p class="quantity-box">Quantity: <input type="number"  id="${dataAnswer.products[i].id}" min="1" max="10" value="1"> <button type="button" data-id="${dataAnswer.products[i].id}" data-name="${dataAnswer.products[i].name}" data-img-url="${dataAnswer.products[i].imgurl}" data-price="${dataAnswer.products[i].price}" class="buyfew btn btn-primary py-2"><i class="fa fa-suitcase" aria-hidden="true"></i> Buy</button></p>
+      																			</div>
+      																		</div>
+            																</div>
+          															</div>
+        															</div>
+      													 </div>`;
 
-			itemsContent += modalTemplate+itemsTemplate;
+      			itemsContent += modalTemplate+itemsTemplate;
 
-			//Push all category to Array
-			let productsCategoryAll = dataAnswer.products[i].category;
-			categoryArr.push(productsCategoryAll);
+      			//Push all category to Array
+      			let productsCategoryAll = dataAnswer.products[i].category;
+      			categoryArr.push(productsCategoryAll);
 
         }
 
@@ -156,10 +154,8 @@ function items() {
               });
             }
 
-
-        localStorage.setItem('shoppingBag', JSON.stringify(bascket));
-        getBack();
-
+            localStorage.setItem('shoppingBag', JSON.stringify(bascket));
+            getBack();
 
           }
         }, false);
