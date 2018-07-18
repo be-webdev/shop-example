@@ -108,7 +108,7 @@ function items() {
                 for (let index = 0; index < bascket.length; index++) {
                   if(bascket[index].productids === dataId){
                     bascket[index].quantity = Number(bascket[index].quantity)+1;
-                    bascket[index].price += bascket[index].price;
+                    bascket[index].price = parseFloat(bascket[index].price)+parseFloat(dataPrice);
                     key = false;
                   }
                 }
@@ -140,7 +140,7 @@ function items() {
             for (let index = 0; index < bascket.length; index++) {
               if(bascket[index].productids === dataId){
                 bascket[index].quantity = Number(bascket[index].quantity)+Number(dataQuantity);
-                bascket[index].price = parseFloat(bascket[index].price)+(parseFloat(dataPrice)*Number(dataQuantity));
+                bascket[index].price = parseFloat(bascket[index].price)+(dataPrice*dataQuantity);
                 key = false;
               }
             }
@@ -236,7 +236,7 @@ function getBack() {
           							<div class="col-8 text-center m-auto">
           								<p>${bascket[i].name}</p>
           								<p><small>Quantity:</small> ${bascket[i].quantity}</p>
-          								<p><small>Price:</small>  <span class="text-danger">${bascket[i].price}<sup><small>€</small></sup></span></p>
+          								<p><small>Price:</small>  <span class="text-danger">${(bascket[i].price).toFixed(2)}<sup><small>€</small></sup></span></p>
           							</div>
           							<div class="delete-cart-item">
           								<button type="button" data-id="${bascket[i].productids}" class="delete btn btn-danger fa fa-trash"></button>
@@ -251,6 +251,6 @@ function getBack() {
     }
 
     document.querySelector('#bag').textContent = bascketQuantity;
-    document.querySelector('#bascketTotal').textContent = bascketTotal;
+    document.querySelector('#bascketTotal').textContent = (bascketTotal).toFixed(2);
 }
 getBack();
